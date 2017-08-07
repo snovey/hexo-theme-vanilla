@@ -1,0 +1,14 @@
+<section class="category">
+  <% page.posts.each(function (post) { %>
+    <% if (post.categories && post.categories.length){ %>
+      <%- list_categories(post.categories, {
+        show_count: false,
+        class: 'article-categories',
+        style: 'span',
+        separator: ', '
+      }) %>
+    <% } %>
+    </div>
+  <% }) %>
+</section>
+<%- partial('_partial/paginator') %>

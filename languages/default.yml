@@ -1,0 +1,9 @@
+Menu:
+  home: Home
+  archives: Archives
+  categories: Categories
+  tags: Tags
+  about: About
+Paginator:
+  Prev: Prev
+  Next: Next

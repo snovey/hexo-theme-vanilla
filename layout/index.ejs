@@ -1,0 +1,26 @@
+<section class="posts">
+  <% page.posts.each(function (post) { %>
+    <article class="post">
+      <div class="post-title">
+        <a class="post-title-link" href="<%- url_for(post.path) %>"><%= post.title %></a>
+      </div>
+      <div class="post-meta">
+        <span class="post-time"><%- date(post.date, "YYYY-MM-DD") %></span>
+      <span>|<span>
+      <% if (post.tags && post.tags.length){ %>
+        <%- list_tags(post.tags, {
+          show_count: false,
+          class: 'article-tag',
+          style: 'span',
+          separator: ', '
+        }) %>
+      <% } %>
+      </div>
+      <div class="post-content">
+        <%- post.excerpt %>
+        <p><a class="btn" href="<%- url_for(post.path) %>">继续阅读</a></p>
+      </div>
+    </article>
+  <% }) %>
+</section>
+<%- partial('_partial/paginator') %>

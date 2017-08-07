@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+<meta name=viewport content="width=device-width,minimum-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<!--link href="<%= url_for(theme.css) %>/main.css?v=<%= theme.version %>" rel="stylesheet" type="text/css" /-->
+
+<% if (page.keywords) { %>
+  <meta name="keywords" content="<%= page.keywords %>" />
+<% } else if (page.tags && page.tags.length) { %>
+  <meta name="keywords" content="<% for (tag in page.tags) { %><%= tag.name %>,<% } %>" />
+<% } else if (theme.keywords) { %>
+  <meta name="keywords" content="<%= theme.keywords %>" />
+<% } %>
+
+
+<% if (theme.rss === '' && config.feed && config.feed.path) { %>
+  <% theme.rss = config.feed.path %>
+<% } %>
+<% if (theme.rss) { %>
+  <link rel="alternate" href="<%= url_for(theme.rss) %>" title="<%= config.title %>" type="application/atom+xml" />
+<% } %>
+
+<% if (theme.favicon) { %>
+  <link rel="shortcut icon" type="image/x-icon" href="<%= url_for(theme.favicon) %>?v=<%= theme.version %>" />
+<% } %>
+<% /*Canonical, good for google search engine (SEO) : https://support.google.com/webmasters/answer/139066*/ %>
+<% if (theme.canonical) { %>
+  <link rel="canonical" href="<%= config.url %>/<%= page.canonical_path.replace('index.html', '') %>"/>
+<% } %>
+<title><%= config.title %></title>
+<%- css('css/style.css') %>
