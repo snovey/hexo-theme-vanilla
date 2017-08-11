@@ -1,0 +1,21 @@
+<% if (page.path === 'tags/index.html') { %>
+  <div class="tagcloud">
+    <div class="tagcloud-title">
+      共计 <%= site.tags.length %> 个标签
+    </div>
+    <div class="tagcloud-tags">  
+      <% if (site.tags && site.tags.length){ %>
+        <%- tagcloud({
+          min_font: 16, 
+          max_font: 35, 
+          amount: 999, 
+          color: true, 
+          start_color: '#adb5bd', 
+          end_color: '#212529',
+        }) %>
+        <% } %>
+    </div>
+  </div>
+<% } else { %>
+  <%- page.content %>
+<% } %>

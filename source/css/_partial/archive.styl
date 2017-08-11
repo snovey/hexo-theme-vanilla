@@ -1,24 +1,25 @@
-.archive {
-  margin: 1em auto;
-  padding: 30px 50px;
-  .post-archive {
-    list-style: none;
-    padding: 0;
-    .post-item {
-      padding: 2rem;
-      background-color: #fff;
-      border: 1px solid #ddd;
-      box-shadow: 0 0 2px #ddd;
-      margin: 2rem 0;
-      .post-date {
-        display: inline-block;
-        margin-right: 10px;
-        color: #BABABA;
-      }
-      .post-title {
-        color: #368CCB;
-        text-decoration: none;
-      }
-    }
+.archive-page-counter {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1em;
+}
+.archive-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em;
+  transition: transform .2s, color .2s, -webkit-transform .2s;
+  border-bottom: 1px dotted GRAY-3;
+  &:hover {
+    transform: translateX(2px);
   }
+  .archive-title {
+    width: 65%;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+.archives ul {
+  margin: 0;
 }

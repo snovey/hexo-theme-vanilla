@@ -1,0 +1,33 @@
+.page-nav {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  line-height: 2rem;
+  text-align: center;
+  .page-prev, .page-next {
+    font-weight: bold;
+    width: 2rem;
+    height: 2rem;
+    color: GRAY-7;
+    text-decoration: none;
+    border: 2px solid GRAY-7;
+    transition-property: #fff;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    &:hover {
+      border-color: GRAY-7;
+      color: #fff;
+      background: GRAY-7;
+    }
+  }
+}
+.page-number {
+  line-height: 2rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  color: GRAY-6
+}

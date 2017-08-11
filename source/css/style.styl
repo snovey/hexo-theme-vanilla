@@ -1,42 +1,121 @@
-@import "nib"
-@import "normalize.css"
-@import "_variables"
-html {
+@import "typo.css"
+@import "base"
+.highlight {
+  font-size: 0.8em
+  overflow: auto;
+  table {
+    width: 100%;
+    td {
+      border: 0;
+      padding: 0;
+    }
+    pre {
+      border: none;
+    }
+  }
+}
+
+.typo {
+  a {
+    border-bottom: 0;
+  }
+  blockquote {
+    p, ul {
+      margin-bottom: 0
+    }
+  }
+  ul {
+    margin-left: 2.5em;
+  }
+}
+
+.IPA {
+    font-family: "Segoe UI", Verdana,Lucida Sans Regular,Lucida Sans Unicode,Arial,sans-serif;
+    width: 2em;
+    height: 2em;
+    line-height: 1.5em;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.main a {
+  color: GRAY-7;
+  &:hover {
+    color: GRAY-6
+  }
+}
+
+.post-title .title {
+    text-align: center;
+    padding: 1.2em;
+    margin-top: 0;
+}
+
+#info {
+  display: none;
+  border: none;
+  background-color: #24292e;
+  line-height: 1;
+  z-index: 3
+  position: fixed;
+  bottom: 72px;
+  left: 72px;
+}
+
+figure::-webkit-scrollbar {display:none}
+.posts {
+  article {
+    position: relative;
+    padding-top: 1em;
+    padding-bottom: 3em;
+    border-bottom: 1px solid GRAY-2;
+    &:after {
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      display: block;
+      margin-left: -5px;
+      width: 7px;
+      height: 7px;
+      border: 1px solid GRAY-2;
+      border-radius: 100%;
+      background: #fff;
+      box-shadow: #fff 0 0 0 5px;
+      content: "";
+      z-index: 0
+    }
+    &:last-child {
+      border-bottom: 0
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
   font-size: 62.5%;
-  background: #f6f6f6;
-  min-height: 100%
-  height: 100%;
-}
-body {
-  color: #24292e;
-  width:100%;
-  font-size: 2rem;
-  line-height: 4rem;
-  position: relative;
-}
-.main {
-  width: 80%;
-  min-height: calc(100vh - 144px);
-  max-width: 960px;
-  margin: 0 auto;
-  padding-bottom: 60px;
-}
-blockquote {
-  color: #666;
-  margin: 0;
-  background-color: #f0f0f0;
-  padding: 3px 1em;
-  border-left: 6px solid #b4b4b4;
-}
-img {
-    max-height: 500px;
-    max-width: 500px;
+  #info {
     display: block;
-    margin: 0 auto;
+    top: 15px;
+    left: 15px;
+    bottom: auto;
+    position: absolute;
+    z-index: 0
+  }
+  .continue {
+    color: purple;
+    text-align: center;
+  }
+  .post-title {
+    text-align: center;
+  }
 }
-@import "_partial/header";
-@import "_partial/footer";
-@import "_partial/post";
 @import "_partial/archive";
+@import "_partial/footer";
+@import "_partial/header";
 @import "_partial/highlight";
+@import "_partial/page";
+@import "_partial/paginator"
+@import "_partial/post";
+@import "_partial/siderbar";
 @import "_partial/tags";

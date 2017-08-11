@@ -3,11 +3,33 @@
 <head>
   <%- partial('_partial/head') %>
 </head>
-<body itemscope itemtype="http://schema.org/WebPage" lang="<%= config.language %>">
+<body itemscope itemtype="http://schema.org/WebPage" lang="<%= config.language %>" class="typo">
   <%- partial('_partial/header') %>
   <main class="main">
+    <%- partial('_partial/siderbar') %>
+    <button type="button" id="info"><?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1502186391435" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1007" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32"><defs><style type="text/css"></style></defs><path d="M65.012178 128.544655 65.012178 230.875275 959.381795 230.875275 959.381795 128.544655 65.012178 128.544655Z" p-id="1008" fill="#ffffff"></path><path d="M64.729745 563.201126 959.269231 563.201126 959.269231 460.870506 64.729745 460.870506 64.729745 563.201126Z" p-id="1009" fill="#ffffff"></path><path d="M64.729745 895.525953 959.269231 895.525953 959.269231 793.195334 64.729745 793.195334 64.729745 895.525953Z" p-id="1010" fill="#ffffff"></path><path d="M64.729745 889.742227" p-id="1011" fill="#000000"></path></svg></button>
     <%- body %>
   </main>
   <%- partial('_partial/footer') %>
+  <script>
+    function toggleClassMenu() {
+      myMenu.classList.add("siderbar--animatable");
+    if(!myMenu.classList.contains("siderbar--visible")) {
+      myMenu.classList.add("siderbar--visible");
+    } else {
+      myMenu.classList.remove('siderbar--visible');
+    }
+    }
+
+    function OnTransitionEnd() {
+      myMenu.classList.remove("siderbar--animatable");
+    }
+
+    var myMenu = document.querySelector(".siderbar");
+    var oppMenu = document.querySelector("#info");
+    myMenu.addEventListener("transitionend", OnTransitionEnd, false);
+    oppMenu.addEventListener("click", toggleClassMenu, false);
+    myMenu.addEventListener("click", toggleClassMenu, false);
+  </script>
 </body>
 </html>

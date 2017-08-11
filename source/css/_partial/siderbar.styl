@@ -1,0 +1,111 @@
+.siderbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.siderbar--visible {
+    pointer-events: auto;
+}
+
+.siderbar-panel {
+    color: #fff;
+    position: relative;
+    max-width: 400px;
+    width: 70%;
+    height: 100%;
+    box-shadow: none;
+    background-color: GRAY-9;
+    -webkit-transform: translateX(-103%);
+            transform: translateX(-103%);
+    display: flex;
+    flex-direction: column;
+    will-change: transform;
+    z-index: 2;
+    pointer-events: auto;
+}
+
+.siderbar--visible .siderbar-panel {
+    -webkit-transform: none;
+            transform: none;
+}
+
+.siderbar--animatable .siderbar-panel {
+    transition: all 130ms ease-in;
+}
+
+.siderbar--visible.siderbar--animatable  .siderbar-panel {
+    transition: all 330ms ease-out;
+}
+
+.siderbar:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    opacity: 0;
+    will-change: opacity;
+    pointer-events: none;
+    transition: opacity 0.3s cubic-bezier(0,0,0.3,1);
+}
+
+.siderbar--visible.siderbar:after {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.siderbar:after {
+  width: 100%;
+  /* width: 375px; */
+  height: 100%;
+}
+
+
+/* 上面的代码不要乱动，侧栏滑动的 */
+.siderbar-panel {
+  padding-top: 60px;
+  .author-panel {
+    text-align: center;
+    img {
+      margin-bottom: 1.2em;
+    }
+    .author-name {
+      font-size: 1.5em;
+      margin-bottom: 0
+    }
+  }
+  nav.site-state {
+    display: flex;
+    justify-content: center;
+    .site-state-item {
+      padding: 0 10px;
+      border-left: 1px dotted GRAY-3;
+      text-align: center;
+      &:first-child {
+        border-left: none
+      }
+      span {
+        display: block;
+      }
+    }
+  }
+  .feed-link {
+    margin: 20px auto;
+    padding: 0px 15px;
+    border: 1px solid #fc6423;
+    border-radius: 3px;
+    a {
+      color: #fc6423;
+    }
+  }
+}
+

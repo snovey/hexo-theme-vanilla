@@ -1,0 +1,20 @@
+.tag-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em;
+  transition: transform .2s, color .2s, -webkit-transform .2s;
+  border-bottom: 1px dotted GRAY-3;
+  &:hover {
+    transform: translateX(2px);
+  }
+  .tag-title {
+    width: 65%;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+.tags ul {
+  margin: 0;
+}

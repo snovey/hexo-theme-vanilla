@@ -1,23 +1,18 @@
-<section class="archive">
-  <ul class="post-archive">
-    <span class="archive-page-counter">非常好! 目前共计 <%= page.posts.length %> 篇日志。 继续努力。</span>
-    <% page.posts.each(function (post) { %>
-      <article class="post-item">
-          <div class="post-meta">
-            <span class="post-time"><%- date(post.date, "YYYY-MM-DD") %></span>
-          <span>|<span>
-          <% if (post.tags && post.tags.length){ %>
-            <%- list_tags(post.tags, {
-              show_count: false,
-              class: 'article-tag',
-              style: 'span',
-              separator: ', '
-            }) %>
-          <% } %>
-          </div>
-          <a class="post-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
-      </article>
-    <% }) %>
-  </ul>
+<section class="archives">
+  <div class="archive-page-counter">目前共计 <%= site.posts.length %> 篇日志</div>
+  <div class="archive">
+    <% var lastyear; %>
+    <% page.posts.each(function(post) { %>
+      <% var year = post.date.year() %>
+      <% if(lastyear !== year) { %>
+        <h4 class="year"><%= year %></h4>
+        <% lastyear = year %>
+      <% } %>
+      <div class="archive-item">
+        <a class="archive-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
+        <span class="archive-time"><%= post.date.format('MM-DD') %></span>
+      </div>
+      <% }) %>
+  </div>
 </section>
 <%- partial('_partial/paginator') %>

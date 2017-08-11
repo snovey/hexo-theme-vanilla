@@ -1,5 +1,5 @@
 .header {
-  background-color: #24292e
+  background-color: GRAY-9
   .header-inner {
     margin: auto
     max-width: 960px
@@ -9,25 +9,36 @@
     align-items: center
     justify-content: space-between
     .blog-title .logo {
-      color: #AAA;
+      color: GRAY-3;
       font-size: 1.5em;
       font-family: "Comic Sans MS",cursive, LiSu, sans-serif;
       text-decoration: none;
     }
-    .menu {
+    .navbar {
       margin: 0;
       padding: 0;
-      .menu-item {
+      .menu-item-link {
         display: inline-block;
-        width: 6rem;
+        width: 5rem;
         text-align: center;
+        color: GRAY-4;
+        text-decoration: none;
         &:hover {
-          background-color: #eee;
+          background-color: GRAY-7;
         }
       }
-      .menu-item-link {
-        color: #AAA;
-        text-decoration: none;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    .header-inner {
+      .blog-title {
+        margin: auto;
+      }
+      .navbar {
+        display: none;
       }
     }
   }

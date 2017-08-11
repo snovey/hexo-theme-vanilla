@@ -1,8 +1,29 @@
-<% if (page.total > 1){ %>
-  <nav class="page-nav">
-    <%- paginator({
-      prev_text: "&laquo;",
-      next_text: "&raquo;"
-    }) %>
-  </nav>
+<% if (page.prev || page.next) { %>
+    <nav class="page-nav">
+         <% if (page.prev) { %>
+         <a href="<%- url_for(page.prev_link) %>" title="<%= page.prev.title %>" class="page-prev tl">
+          &lt;
+          <!-- <span>
+            <% if (page.prev.title) { %>
+              <%= page.prev.title %>
+            <% } else { %>
+              (no title)
+            <% } %>
+          </span> -->
+        </a>
+        <% } %>
+        <div class="page-number"><%= page.current %> / <%= Math.ceil(site.posts.length / config.per_page) %></div>
+        <% if (page.next) { %>
+          <a href="<%- url_for(page.next_link) %>"  title="<%= page.next.title %>" class="page-next tl">
+           &gt;
+           <!-- <span>
+             <% if (page.next.title) { %>
+               <%= page.next.title %>
+              <% } else { %>
+                (no title)
+              <% } %>
+          </span> -->
+          </a>
+        <% } %>
+    </nav>
 <% } %>
