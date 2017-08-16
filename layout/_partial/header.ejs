@@ -1,12 +1,34 @@
 <header class="header">
-  <div class="header-inner">
-    <div class="blog-title">
-      <a href="<%- url_for() %>" class="logo"><%= config.title %></a>
+  <div class="header-wrap">
+    <a href="javascript:;" id="nav-trigger" class="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </a>
+    <div class="site-meta">
+      <img src="<%= theme.avatar %>" class="site-avatar">
+      <div class="site-info">
+        <div class="site-info-wrap">
+          <h1 class="site-title"><%= config.title %></h1>
+          <span class="site-description"><%= config.description %></span>
+        </div>
+      </div>
     </div>
-    <nav class="navbar">
+    <nav class="menu">
+      <ul class="menu-items">
+        <div class="menu-info">
+          <img src="<%= theme.avatar %>" class="site-avatar">
+          <h1 class="site-title"><%= config.title %></h1>
+          <span class="site-description"><%= config.description %></span>
+        </div>
         <% for (name in theme.menu) { %>
-            <a href="<%- url_for(theme.menu[name]) %>" class="menu-item-link"><%- __('menu.' + name) %></a>
-          <% } %>
-      </nav>
+          <li class="menu-item">
+            <a href="<%- url_for(theme.menu[name]) %>" class="menu-item-link" >
+              <span class="menu-item-text"><%- __('menu.' + name) %></span>
+            </a>
+          </li>
+        <% } %>
+      </ul>
+    </nav>
   </div>
 </header>

@@ -1,45 +1,257 @@
 .header {
-  background-color: GRAY-9
-  .header-inner {
-    margin: auto
-    max-width: 960px
-    height: 60px
-    line-height: 60px
-    display: flex
-    align-items: center
-    justify-content: space-between
-    .blog-title .logo {
-      color: GRAY-3;
-      font-size: 1.5em;
-      font-family: "Comic Sans MS",cursive, LiSu, sans-serif;
-      text-decoration: none;
+  background-color: COLOR-9
+}
+.header-wrap {
+  margin: auto
+  max-width: 960px
+  height: 72px
+}
+.nav-toggle {
+  display: none
+  position: absolute
+  left: 10px
+  padding: 10px
+  background-image: none
+  border-radius: 4px
+  top: 36px
+  margin-top: -20px
+  border: 0
+  cursor: pointer
+  z-index: 2
+  span {
+    display: block
+    width: 25px
+    height: 3px
+    margin-bottom: 5px
+    position: relative
+    background: COLOR-2
+    border-radius: 3px
+    -webkit-transform-origin: 24px
+    transform-origin: 24px
+    -webkit-transition: background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0)
+    transition: background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0)
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0)
+  }
+}
+.toggle-animate {
+  span {
+    opacity: 1
+    -webkit-transform: rotate(45deg)
+    transform: rotate(45deg)
+    &:nth-last-child(1) {
+      opacity: 1
+      -webkit-transform: rotate(45deg)
+      transform: rotate(45deg)
     }
-    .navbar {
-      margin: 0;
-      padding: 0;
-      .menu-item-link {
-        display: inline-block;
-        width: 5rem;
-        text-align: center;
-        color: GRAY-4;
-        text-decoration: none;
-        &:hover {
-          background-color: GRAY-7;
-        }
-      }
+    &:nth-last-child(2) {
+      opacity: 0
+    }
+    &:nth-last-child(3) {
+      opacity: 1
+      -webkit-transform: rotate(-45deg)
+      transform: rotate(-45deg)
+    }
+  }
+}
+nav .site-avatar,
+nav .site-title,
+nav .site-description {
+  display: none
+}
+
+.site-meta {
+  float: left
+}
+
+.site-info {
+  float: right
+  display: table
+  height: 72px
+}
+
+.site-info-wrap {
+  display: table-cell
+  vertical-align: middle
+}
+
+h1.site-title {
+  margin: 0
+  color: COLOR-3
+  font-size: 28px
+  font-weight: bolder
+  text-decoration: none
+  line-height: 28px
+}
+
+.site-description {
+  line-height: 16px
+  vertical-align: bottom
+  color: COLOR-3
+}
+
+.site-avatar {
+  display: inline-block
+  margin-top: 8px
+  margin-right: 10px
+  width: 56px
+  height: 56px
+  border-radius: 5px
+}
+
+.menu {
+  line-height: 72px
+  float: right
+  .menu-items {
+    margin: 0
+    padding: 0
+  }
+}
+
+.menu-item {
+  display: inline-block
+  list-style: none
+  .menu-item-link {
+    display: inline-block
+    font-size: 1.1rem
+    width: 5.2rem
+    text-align: center
+    color: COLOR-4
+    text-decoration: none
+    &:hover {
+      color: COLOR-0
+      background-color: COLOR-7
     }
   }
 }
 
 @media screen and (max-width: 768px) {
-  header {
-    .header-inner {
-      .blog-title {
-        margin: auto;
-      }
-      .navbar {
-        display: none;
-      }
+  .header-wrap {
+    text-align: center
+  }
+  .site-meta {
+    float: none
+    margin: auto
+  }
+
+  .site-info {
+    float: none
+    margin: auto
+    display: table
+    height: 72px
+  }
+
+  .site-avatar {
+    display: none
+  }
+
+  .site-description {
+    display: none
+  }
+  nav .site-avatar,
+  nav .site-title,
+  nav .site-description {
+    line-height: 1.35
+    padding: 3px
+    display: block
+    margin: auto
+  }
+  nav .site-title {
+    font-size: 24px
+  }
+  .site-avatar {
+    width: 72px
+    height: 72px
+    border-radius: 36px
+  }
+
+  .menu {
+    position: fixed
+    left: 0
+    top: 0
+    z-index: 1
+    overflow: hidden
+    width: 100%
+    height: 100%
+    line-height: 48px
+    pointer-events: none
+    .menu-items {
+      padding-top: 72px
     }
+  }
+  .menu ul>li::first-child {
+    margin-top: 30px
+  }
+
+  .nav-toggle {
+    display: block
+  }
+
+  .menu--visible {
+      pointer-events: auto
+  }
+
+  .menu-items {
+    background-color: COLOR-9
+    color: COLOR-0
+    position: relative
+    min-width: 260px
+    width: 40%
+    height: 100%
+    -webkit-transform: translateX(-103%)
+            transform: translateX(-103%)
+    will-change: transform
+    z-index: 3
+    pointer-events: auto
+    .menu-item {
+      display: block
+    }
+    .menu-info {
+      margin-bottom: 30px
+    }
+    .menu-item-link {
+      width: 100%
+    }
+    .menu-item-text {
+      letter-spacing: 0.5em
+      margin-left: 0.5em
+    }
+  }
+
+  .menu--visible .menu-items {
+    -webkit-transform: none
+            transform: none
+  }
+
+  .menu--animatable .menu-items {
+    transition: all 130ms ease-in
+  }
+
+  .menu--visible.menu--animatable  .menu-items {
+    transition: all 330ms ease-out
+  }
+
+  .menu:after {
+    content: ''
+    display: block
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background: rgba(0,0,0,0.4)
+    opacity: 0
+    will-change: opacity
+    pointer-events: none
+    transition: opacity 0.3s cubic-bezier(0,0,0.3,1)
+  }
+
+  .menu--visible.menu:after {
+    opacity: 1
+    pointer-events: auto
+  }
+  .menu:after {
+    width: 100%
+    height: 100%
   }
 }

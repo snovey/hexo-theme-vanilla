@@ -1,21 +1,40 @@
 .footer {
-  font-size: 14px;
-  color: GRAY-3;
-  background-color: GRAY-9
+  font-size: 14px
+  color: COLOR-3
+  background-color: COLOR-9
   width: 100%
-  text-align: center;
-  bottom: 0
-  height: 60px
+  text-align: center
+  height: 90px
   line-height: 30px
-  .footer-inner {
-    margin: auto;
-    max-width: 960px
-    flex-direction: column;
-    display: flex
-    align-items: center
-    justify-content: center
-    p {
-      margin-bottom: 0;
-    }
+}
+.footer-wrap {
+  height: 90px
+  display: table
+  margin: auto
+  width: 100%
+  max-width: 960px
+}
+.footer-wrap-inner {
+  display: table-cell
+  vertical-align: middle
+  p {
+    margin-bottom: 0
   }
+}
+a.symbol {
+  display: inline-block
+  margin-left: 0.5rem
+  margin-right: 0.5rem
+  svg {
+    display: inline-block
+    vertical-align: middle
+  }
+}
+.icon {
+  width: 16px;
+  height: 16px;
+  color: rgb(204, 204, 204);
+  border-color: rgb(68, 68, 68);
+  outline-color: rgb(68, 68, 68);
+  text-shadow: none;
 }

@@ -1,0 +1,96 @@
+.posts {
+  .post-title {
+    text-align: left
+    margin-top: 0
+    .post-title-link {
+      color: COLOR-9
+      text-decoration: none
+      display: inline-block
+      transition: color .3s ease
+      margin-bottom: 5px
+      &:after {
+        content: ''
+        margin-top: 2px
+        display: block
+        height: 2px
+        background: transparent
+        transition: height .5s ease, background-color .5s ease
+        transition-timing-function: ease-in-out
+      }
+      &:hover:after {
+        height: 2px
+        background: black
+      }
+    }
+  }
+  .post-meta {
+    color: COLOR-7
+    a {
+      color: COLOR-7
+      text-decoration: none
+    }
+  }
+  .article-tag-link {
+    padding: 2px 6px
+    background-color: COLOR-1
+    border-radius: 3px
+  }
+  .post-content {
+    padding: 1em 0
+  }
+  a.btn {
+    color: COLOR-7
+    background: COLOR-0
+    display: inline-block
+    padding: 0 20px
+    margin: auto
+    text-decoration: none
+    border: 2px solid COLOR-7
+    transition-property: COLOR-0
+    transition-duration: 0.2s
+    transition-timing-function: ease-in-out
+    transition-delay: 0s
+  }
+  a.btn:hover {
+    border-color: COLOR-7
+    color: COLOR-0
+    background: COLOR-7
+  }
+  a.btn:after {
+    content: " »"
+  }
+  article {
+    position: relative
+    padding-top: 1em
+    padding-bottom: 3em
+    border-bottom: 1px solid COLOR-2
+    &:after {
+      position: absolute
+      bottom: -5px
+      left: 50%
+      display: block
+      margin-left: -5px
+      width: 7px
+      height: 7px
+      border: 1px solid COLOR-2
+      border-radius: 100%
+      background: COLOR-0
+      box-shadow: COLOR-0 0 0 0 5px
+      content: ""
+    }
+    &:last-child {
+      border-bottom: 0
+      &:after {
+        display: none
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .post {
+    .post-title, .post-meta, .continue {
+      text-align: center
+    }
+  }
+}

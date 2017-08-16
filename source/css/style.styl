@@ -1,23 +1,24 @@
-@import "typo.css"
-@import "base"
+@import "_util/typo.css"
+@import "_util/base"
+@import "_util/highlight"
 .highlight {
   font-size: 0.8em
-  overflow: auto;
+  overflow: auto
   table {
-    width: 100%;
+    width: 100%
     td {
-      border: 0;
-      padding: 0;
-    }
-    pre {
-      border: none;
+      border: 0
+      padding: 0
+      pre {
+        border: none
+      }
     }
   }
 }
 
 .typo {
   a {
-    border-bottom: 0;
+    border-bottom: 0
   }
   blockquote {
     p, ul {
@@ -25,97 +26,33 @@
     }
   }
   ul {
-    margin-left: 2.5em;
+    margin-left: 2.5em
   }
 }
 
 .IPA {
-    font-family: "Segoe UI", Verdana,Lucida Sans Regular,Lucida Sans Unicode,Arial,sans-serif;
-    width: 2em;
-    height: 2em;
-    line-height: 1.5em;
-    text-align: center;
-    border-bottom: 1px solid #eee;
+    font-family: "Segoe UI", Verdana, "Lucida Sans Regular", "Lucida Sans Unicode", Arial, sans-serif
+    width: 2em
+    height: 2em
+    line-height: 1.5em
+    text-align: center
+    border-bottom: 1px solid #eee
 }
 
 .main a {
-  color: GRAY-7;
+  color: COLOR-7
   &:hover {
-    color: GRAY-6
+    color: COLOR-6
   }
-}
-
-.post-title .title {
-    text-align: center;
-    padding: 1.2em;
-    margin-top: 0;
-}
-
-#info {
-  display: none;
-  border: none;
-  background-color: #24292e;
-  line-height: 1;
-  z-index: 3
-  position: fixed;
-  bottom: 72px;
-  left: 72px;
 }
 
 figure::-webkit-scrollbar {display:none}
-.posts {
-  article {
-    position: relative;
-    padding-top: 1em;
-    padding-bottom: 3em;
-    border-bottom: 1px solid GRAY-2;
-    &:after {
-      position: absolute;
-      bottom: -5px;
-      left: 50%;
-      display: block;
-      margin-left: -5px;
-      width: 7px;
-      height: 7px;
-      border: 1px solid GRAY-2;
-      border-radius: 100%;
-      background: #fff;
-      box-shadow: #fff 0 0 0 5px;
-      content: "";
-      z-index: 0
-    }
-    &:last-child {
-      border-bottom: 0
-      &:after {
-        display: none;
-      }
-    }
-  }
-}
-@media screen and (max-width: 768px) {
-  font-size: 62.5%;
-  #info {
-    display: block;
-    top: 15px;
-    left: 15px;
-    bottom: auto;
-    position: absolute;
-    z-index: 0
-  }
-  .continue {
-    color: purple;
-    text-align: center;
-  }
-  .post-title {
-    text-align: center;
-  }
-}
-@import "_partial/archive";
-@import "_partial/footer";
-@import "_partial/header";
-@import "_partial/highlight";
-@import "_partial/page";
+
+@import "_partial/footer"
+@import "_partial/header"
 @import "_partial/paginator"
-@import "_partial/post";
-@import "_partial/siderbar";
-@import "_partial/tags";
+@import "archive"
+@import "index"
+@import "page"
+@import "post"
+@import "tags"
