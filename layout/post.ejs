@@ -1,9 +1,18 @@
 <article class="post-detail">
   <div class="post-title">
-    <h2 class="title"><%= page.title %></h2>
+    <h1 class="title"><%= page.title %></h1>
   </div>
    <div class="post-meta">
     <span class="post-time"><%- date(page.date, "YYYY-MM-DD") %></span>
+    <span>|<span>
+    <% if (page.tags && page.tags.length){ %>
+      <%- list_tags(page.tags, {
+        show_count: false,
+        class: 'article-tag',
+        style: 'span',
+        separator: ', '
+      }) %>
+    <% } %>
   </div>
   <div class="post-content">
     <%- page.content %>
@@ -26,6 +35,7 @@
       for (i=0; i < all.length; i += 1) {
         all[i].SourceElement().parentNode.className += ' has-jax';
       }
+      Array.from(document.getElementsByClassName('has-jax')).forEach(x => x.parentNode.style.overflow = 'auto')
     });
   </script>
   <script src="<%= theme.mathjax.cdn %>"></script>

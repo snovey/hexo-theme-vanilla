@@ -1,56 +1,57 @@
-COLOR-0 = #ffffff
-COLOR-1 = #f1f3f5
-COLOR-2 = #e9ecef
-COLOR-3 = #dee2e6
-COLOR-4 = #ced4da
-COLOR-5 = #adb5bd
-COLOR-6 = #868e96
-COLOR-7 = #495057
-COLOR-8 = #343a40
-COLOR-9 = #212529
+COLOR-0 = #f8f8f5
+COLOR-3 = #ebebeb
+COLOR-7 = #5c5c5c
+COLOR-9 = #212121
+
+body, button, input, select, textarea, optgroup {
+  font-size: 16px
+}
+
+@media screen and (max-width: 768px) {
+  body, button, input, select, textarea, optgroup {
+    font-size: 14px
+  }
+}
+
 section {
-  min-height: calc(100vh - 150px - 6rem - 4px) /* 150px 是上线栏， 6rem 是 line-height+margin*2， 4px 是 border*2*/
+  min-height: calc(100vh - 162px - 6rem - 4px) /* 162px 是上下栏， 6rem 是 line-height+margin*2， 4px 是 border*2 */
 }
 main {
   display: block
-  width: 95%
-  max-width: 960px
-  min-height: calc(100vh - 150px)
   margin: 0 auto
+  max-width: 960px
+  width: 95%
+  min-height: calc(100vh - 162px)
 }
 blockquote {
-  color: COLOR-7
-  background-color: COLOR-1
-  padding: 1em
   margin: 0
   margin-bottom: 1.2em
-  border-left: 6px solid COLOR-3
+  padding: 1em
+  border-left: 6px solid COLOR-7
+  color: COLOR-7
+  background-color: COLOR-3
 }
 img {
-  max-height: 500px
-  max-width: 70%
   display: block
   margin: 0 auto
+  max-height: 500px
+  max-width: 70%
 }
 code {
-  background-color: COLOR-2
   padding: .1em .5em
   border-radius: 3px
+  background-color: COLOR-3
 }
 kbd {
-  -moz-border-radius: 3px
-  -moz-box-shadow: 0 1px 0 rgba(0,0,0,0.2),0 0 0 2px COLOR-0 inset
-  -webkit-border-radius: 3px
-  -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.2),0 0 0 2px COLOR-0 inset
-  background-color: COLOR-1
-  border: 1px solid COLOR-3
-  border-radius: 3px
-  box-shadow: 0 1px 0 rgba(0,0,0,0.2),0 0 0 2px COLOR-0 inset
-  color: #333
   display: inline-block
-  font-size: 11px
-  line-height: 1.4
   margin: 0 .1em
   padding: .1em .6em
+  border: 1px solid COLOR-3
+  border-radius: 3px
+  font-size: 11px
+  line-height: 1.4
   text-shadow: 0 1px 0 #fff
+  background-color: COLOR-3
+  box-shadow: 0 1px 0 rgba(0,0,0,0.2),0 0 0 2px COLOR-0 inset
+  color: #333
 }

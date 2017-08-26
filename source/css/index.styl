@@ -1,17 +1,18 @@
 .posts {
   .post-title {
-    text-align: left
     margin-top: 0
+    text-align: left
     .post-title-link {
-      color: COLOR-9
-      text-decoration: none
       display: inline-block
-      transition: color .3s ease
       margin-bottom: 5px
+      border: none
+      text-decoration: none
+      color: COLOR-9
+      transition: color .3s ease
       &:after {
         content: ''
-        margin-top: 2px
         display: block
+        margin-top: 2px
         height: 2px
         background: transparent
         transition: height .5s ease, background-color .5s ease
@@ -26,35 +27,37 @@
   .post-meta {
     color: COLOR-7
     a {
-      color: COLOR-7
       text-decoration: none
+      color: COLOR-7
     }
   }
   .article-tag-link {
-    padding: 2px 6px
-    background-color: COLOR-1
-    border-radius: 3px
+    margin: 0 6px
+    padding: 2px 0
+    &:hover {
+      color: COLOR-9
+    }
   }
   .post-content {
     padding: 1em 0
   }
   a.btn {
-    color: COLOR-7
-    background: COLOR-0
     display: inline-block
-    padding: 0 20px
     margin: auto
-    text-decoration: none
+    padding: 0 20px
     border: 2px solid COLOR-7
+    text-decoration: none
+    background: COLOR-0
+    color: COLOR-7
     transition-property: COLOR-0
     transition-duration: 0.2s
     transition-timing-function: ease-in-out
     transition-delay: 0s
   }
   a.btn:hover {
-    border-color: COLOR-7
+    border-color: COLOR-9
     color: COLOR-0
-    background: COLOR-7
+    background: COLOR-9
   }
   a.btn:after {
     content: " »"
@@ -63,20 +66,20 @@
     position: relative
     padding-top: 1em
     padding-bottom: 3em
-    border-bottom: 1px solid COLOR-2
+    border-bottom: 1px solid COLOR-3
     &:after {
+      content: ""
       position: absolute
       bottom: -5px
       left: 50%
       display: block
-      margin-left: -5px
       width: 7px
       height: 7px
-      border: 1px solid COLOR-2
+      margin-left: -5px
+      border: 1px solid COLOR-3
       border-radius: 100%
       background: COLOR-0
       box-shadow: COLOR-0 0 0 0 5px
-      content: ""
     }
     &:last-child {
       border-bottom: 0
@@ -84,6 +87,10 @@
         display: none
       }
     }
+  }
+
+  .post-time {
+    font-family:  Georgia, Constantia, Candara, Corbel, "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 }
 

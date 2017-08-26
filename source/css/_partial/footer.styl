@@ -1,18 +1,18 @@
 .footer {
+  width: 100%
+  height: 90px
   font-size: 14px
+  line-height: 30px
+  text-align: center
   color: COLOR-3
   background-color: COLOR-9
-  width: 100%
-  text-align: center
-  height: 90px
-  line-height: 30px
 }
 .footer-wrap {
-  height: 90px
   display: table
   margin: auto
-  width: 100%
   max-width: 960px
+  width: 100%
+  height: 90px
 }
 .footer-wrap-inner {
   display: table-cell
@@ -20,11 +20,23 @@
   p {
     margin-bottom: 0
   }
+  a {
+    color: COLOR-3
+    border-bottom: 1px solid COLOR-3
+    &:hover {
+      color: COLOR-0
+      border-bottom: 1px solid COLOR-0
+    }
+  }
 }
 a.symbol {
   display: inline-block
+  border: none
   margin-left: 0.5rem
   margin-right: 0.5rem
+  &:hover {
+    border: none
+  }
   svg {
     display: inline-block
     vertical-align: middle
@@ -33,8 +45,8 @@ a.symbol {
 .icon {
   width: 16px;
   height: 16px;
-  color: rgb(204, 204, 204);
-  border-color: rgb(68, 68, 68);
   outline-color: rgb(68, 68, 68);
+  border-color: rgb(68, 68, 68);
   text-shadow: none;
+  color: rgb(204, 204, 204);
 }

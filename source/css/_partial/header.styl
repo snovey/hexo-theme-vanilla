@@ -5,44 +5,47 @@
   margin: auto
   max-width: 960px
   height: 72px
+  .nav-toggle {
+    border: none
+  }
 }
 .nav-toggle {
-  display: none
   position: absolute
+  top: 18px
   left: 10px
-  padding: 10px
-  background-image: none
-  border-radius: 4px
-  top: 36px
-  margin-top: -20px
-  border: 0
-  cursor: pointer
   z-index: 2
+  display: none
+  margin-top: -20px
+  padding: 10px
+  border: 0
+  border-radius: 4px
+  background-image: none
+  cursor: pointer
   span {
+    position: relative
     display: block
+    margin-bottom: 5px
     width: 25px
     height: 3px
-    margin-bottom: 5px
-    position: relative
-    background: COLOR-2
     border-radius: 3px
+    background: COLOR-0
     -webkit-transform-origin: 24px
-    transform-origin: 24px
+            transform-origin: 24px
     -webkit-transition: background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0)
-    transition: background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0)
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0)
+            transition: background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0)
+            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease
+            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0)
   }
 }
 .toggle-animate {
   span {
     opacity: 1
     -webkit-transform: rotate(45deg)
-    transform: rotate(45deg)
+            transform: rotate(45deg)
     &:nth-last-child(1) {
       opacity: 1
       -webkit-transform: rotate(45deg)
-      transform: rotate(45deg)
+              transform: rotate(45deg)
     }
     &:nth-last-child(2) {
       opacity: 0
@@ -50,14 +53,16 @@
     &:nth-last-child(3) {
       opacity: 1
       -webkit-transform: rotate(-45deg)
-      transform: rotate(-45deg)
+              transform: rotate(-45deg)
     }
   }
 }
-nav .site-avatar,
-nav .site-title,
-nav .site-description {
-  display: none
+nav {
+  .site-avatar,
+  a.site-title,
+  .site-description {
+    display: none
+  }
 }
 
 .site-meta {
@@ -65,8 +70,8 @@ nav .site-description {
 }
 
 .site-info {
-  float: right
   display: table
+  float: right
   height: 72px
 }
 
@@ -75,13 +80,20 @@ nav .site-description {
   vertical-align: middle
 }
 
-h1.site-title {
+a.site-title {
+  display: block
   margin: 0
+  padding: 0
+  border-bottom: none
   color: COLOR-3
   font-size: 28px
   font-weight: bolder
   text-decoration: none
   line-height: 28px
+  &:hover {
+    color: COLOR-0
+    border-bottom: none
+  }
 }
 
 .site-description {
@@ -100,8 +112,8 @@ h1.site-title {
 }
 
 .menu {
-  line-height: 72px
   float: right
+  line-height: 72px
   .menu-items {
     margin: 0
     padding: 0
@@ -113,12 +125,14 @@ h1.site-title {
   list-style: none
   .menu-item-link {
     display: inline-block
-    font-size: 1.1rem
     width: 5.2rem
+    border: none
+    font-size: 1.1rem
     text-align: center
-    color: COLOR-4
     text-decoration: none
+    color: COLOR-3
     &:hover {
+      border: none
       color: COLOR-0
       background-color: COLOR-7
     }
@@ -135,9 +149,9 @@ h1.site-title {
   }
 
   .site-info {
+    display: table
     float: none
     margin: auto
-    display: table
     height: 72px
   }
 
@@ -148,13 +162,15 @@ h1.site-title {
   .site-description {
     display: none
   }
-  nav .site-avatar,
-  nav .site-title,
-  nav .site-description {
-    line-height: 1.35
-    padding: 3px
-    display: block
-    margin: auto
+  nav {
+    .site-avatar,
+    a.site-title,
+    .site-description {
+      display: block
+      margin: auto
+      padding: 3px
+      line-height: 1.35
+    }
   }
   nav .site-title {
     font-size: 24px
@@ -175,7 +191,7 @@ h1.site-title {
     height: 100%
     line-height: 48px
     pointer-events: none
-    .menu-items {
+    .menu-wrap {
       padding-top: 72px
     }
   }
@@ -191,17 +207,17 @@ h1.site-title {
       pointer-events: auto
   }
 
-  .menu-items {
-    background-color: COLOR-9
-    color: COLOR-0
+  .menu-wrap {
     position: relative
+    z-index: 3
     min-width: 260px
     width: 40%
     height: 100%
+    color: COLOR-0
+    background-color: COLOR-9
     -webkit-transform: translateX(-103%)
             transform: translateX(-103%)
     will-change: transform
-    z-index: 3
     pointer-events: auto
     .menu-item {
       display: block
@@ -218,32 +234,32 @@ h1.site-title {
     }
   }
 
-  .menu--visible .menu-items {
+  .menu--visible .menu-wrap {
     -webkit-transform: none
             transform: none
   }
 
-  .menu--animatable .menu-items {
+  .menu--animatable .menu-wrap {
     transition: all 130ms ease-in
   }
 
-  .menu--visible.menu--animatable  .menu-items {
+  .menu--visible.menu--animatable  .menu-wrap {
     transition: all 330ms ease-out
   }
 
   .menu:after {
     content: ''
-    display: block
     position: absolute
-    left: 0
     top: 0
+    left: 0
+    display: block
     width: 100%
     height: 100%
     background: rgba(0,0,0,0.4)
     opacity: 0
-    will-change: opacity
     pointer-events: none
     transition: opacity 0.3s cubic-bezier(0,0,0.3,1)
+    will-change: opacity
   }
 
   .menu--visible.menu:after {
