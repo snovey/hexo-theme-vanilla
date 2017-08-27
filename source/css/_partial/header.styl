@@ -11,7 +11,7 @@
 }
 .nav-toggle {
   position: absolute
-  top: 18px
+  top: 36px
   left: 10px
   z-index: 2
   display: none
@@ -124,6 +124,7 @@ a.site-title {
   display: inline-block
   list-style: none
   .menu-item-link {
+    position: relative
     display: inline-block
     width: 5.2rem
     border: none
@@ -134,7 +135,15 @@ a.site-title {
     &:hover {
       border: none
       color: COLOR-0
-      background-color: COLOR-7
+      &::after {
+        content: ''
+        position: absolute;
+        bottom: 0;
+        left: 0px;
+        width: 5.2rem;
+        height: 5px;
+        background-color: COLOR-3;
+      }
     }
   }
 }
@@ -227,6 +236,9 @@ a.site-title {
     }
     .menu-item-link {
       width: 100%
+      &:hover:after {
+        display: none
+      }
     }
     .menu-item-text {
       letter-spacing: 0.5em

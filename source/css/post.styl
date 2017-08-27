@@ -13,7 +13,44 @@
   .post-time {
     font-family:  Georgia, Constantia, Candara, Corbel, "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
-  h2:before {
+  h2:before,
+  h3:before {
     content: "¶"
+    margin-right: .5em
+    color: COLOR-7
+  }
+  .toc-title {
+    display: block
+    margin-bottom: .5em
+    padding-bottom: .5em
+    border-bottom: 1px solid COLOR-3
+  }
+  .toc-article {
+    float: right
+    margin-top: 1.5em
+    margin-left: 1em
+    padding: 1em
+    border: 1px solid COLOR-7
+    ol {
+      list-style: none
+    }
+    .toc-link {
+      border: none
+      &:hover {
+        border: none
+      }
+    }
+  }
+  .toc-article>ol {
+    margin: 0
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .post-detail {
+    .toc-article {
+      float: none
+      margin: 0
+    }
   }
 }

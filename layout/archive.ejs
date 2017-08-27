@@ -1,5 +1,5 @@
 <section class="archives">
-  <div class="archive-page-counter">目前共计 <%= site.posts.length %> 篇日志</div>
+  <div class="archive-page-counter"><%- __('archive.counter', site.posts.length) %><%- __('archive.name') %></div>
   <div class="archive">
     <% var lastyear; %>
     <% page.posts.each(function(post) { %>

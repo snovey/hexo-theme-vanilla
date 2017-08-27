@@ -93,7 +93,6 @@ a {
 }
 
 .typo a {
-  margin: 0 5px;
   border-bottom: 1px solid #5c5c5c;
 }
 
@@ -136,7 +135,7 @@ figcaption {
 
 strong, b {
   font-weight: bold;
-  color: #000;
+  color: #212121;
 }
 
 /* 保证块 / 段落之间的空白隔行 */
@@ -146,7 +145,7 @@ strong, b {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #000;
+  color: #212121;
   line-height: 1.35;
 }
 
@@ -160,17 +159,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .typo h1, .typo-h1 {
   font-size: 2em;
-  font-weight: 500;
 }
 
 .typo h2, .typo-h2 {
   font-size: 1.5em;
-  font-weight: 400;
 }
 
 .typo h3, .typo-h3 {
   font-size: 1.17em;
-  font-weight: 300;
 }
 
 /* 在文章中，应该还原 ul 和 ol 的样式 */

@@ -1,7 +1,7 @@
 <% if (page.prev || page.next) { %>
   <nav class="page-nav">
        <% if (page.prev) { %>
-       <a class="page-prev" href="<%- url_for(page.prev_link) %>" title="<%= page.prev.title %>">
+       <a class="page-prev" href="<%- url_for(page.prev_link) %>">
         &lt;
         <!-- <span>
           <% if (page.prev.title) { %>
@@ -14,7 +14,7 @@
       <% } %>
       <div class="page-number"><%= page.current %> / <%= Math.ceil(site.posts.length / config.per_page) %></div>
       <% if (page.next) { %>
-        <a class="page-next" href="<%- url_for(page.next_link) %>"  title="<%= page.next.title %>">
+        <a class="page-next" href="<%- url_for(page.next_link) %>">
          &gt;
          <!-- <span>
            <% if (page.next.title) { %>

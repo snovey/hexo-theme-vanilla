@@ -1,14 +1,10 @@
-<section class="category">
-  <% page.posts.each(function (post) { %>
-    <% if (post.categories && post.categories.length){ %>
-      <%- list_categories(post.categories, {
-        show_count: false,
-        class: 'article-categories',
-        style: 'span',
-        separator: ', '
-      }) %>
-    <% } %>
-    </div>
-  <% }) %>
+<section class="categories">
+    <h1><%= page.category %></h1>
+    <% page.posts.each(function(post){ %>
+      <article class="category-item">
+        <a class="category-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
+        <span class="date"><%= post.date.format('YYYY-MM-DD') %></span>
+      </article>
+    <% }) %>
 </section>
 <%- partial('_partial/paginator') %>

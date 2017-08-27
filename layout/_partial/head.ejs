@@ -5,12 +5,10 @@
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-<!-- <link href="<%= url_for(theme.css) %>/style.css?v=<%= theme.version %>" rel="stylesheet" type="text/css"> -->
+<link href="<%= url_for(theme.css) %>/style.css?v=<%= theme.version %>" rel="stylesheet" type="text/css">
 
 <% if (page.keywords) { %>
   <meta name="keywords" content="<%= page.keywords %>" />
-<% } else if (page.tags && page.tags.length) { %>
-  <meta name="keywords" content="<% for (tag in page.tags) { %><%= tag.name %>,<% } %>" />
 <% } else if (theme.keywords) { %>
   <meta name="keywords" content="<%= theme.keywords %>" />
 <% } %>
@@ -30,5 +28,26 @@
 <% if (theme.canonical) { %>
   <link rel="canonical" href="<%= config.url %>/<%= page.canonical_path.replace('index.html', '') %>"/>
 <% } %>
-<%- css('css/style.css') %>
-<title><%= config.title %></title>
+<!-- <%- css('css/style.css') %> -->
+<%
+var title = page.title;
+
+if (is_archive()){
+  title = __('menu.archives');
+
+  if (is_month()){
+    title += ': ' + page.year + '/' + page.month;
+  } else if (is_year()){
+    title += ': ' + page.year;
+  }
+} else if (is_category()){
+  title = __('menu.category') + ': ' + page.category;
+} else if (is_tag()){
+  title = __('menu.tags') + ': ' + page.tag;
+} else if (page.path === 'tags/index.html') {
+  title = __('menu.tags')
+} else if (page.path === 'categories/index.html') {
+  title = __('menu.categories')
+}
+%>
+<title><% if (title) { %> <%= title %> | <% } %><%= config.title %></title>

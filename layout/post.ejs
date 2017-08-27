@@ -4,8 +4,8 @@
   </div>
    <div class="post-meta">
     <span class="post-time"><%- date(page.date, "YYYY-MM-DD") %></span>
-    <span>|<span>
-    <% if (page.tags && page.tags.length){ %>
+    <% if (theme.menu.tags && page.tags && page.tags.length) { %>
+      <span>|<span>
       <%- list_tags(page.tags, {
         show_count: false,
         class: 'article-tag',
@@ -13,7 +13,22 @@
         separator: ', '
       }) %>
     <% } %>
+    <% if (theme.menu.categories && page.categories && page.categories.length) { %>
+      <span>|<span>
+      <%- list_categories(page.categories, {
+        show_count: false,
+        class: 'article-tag',
+        style: 'span',
+        separator: ', '
+      }) %>
+    <% } %>
   </div>
+  <% if (theme.toc.enable || page.toc) { %>
+    <div class="toc-article">
+        <strong class="toc-title"><%- __('toc') %></strong>
+        <%- toc(page.content) %>
+    </div>
+  <% } %>
   <div class="post-content">
     <%- page.content %>
   </div>

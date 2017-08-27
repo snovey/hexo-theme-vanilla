@@ -1,19 +1,31 @@
 <% if (page.path === 'tags/index.html') { %>
   <div class="tagcloud">
     <div class="tagcloud-title">
-      共计 <%= site.tags.length %> 个标签
+      <%- __('counter', site.tags.length) %><%- __('menu.tags') %>
     </div>
-    <div class="tagcloud-tags">  
+    <div class="tagcloud-tags">
       <% if (site.tags && site.tags.length){ %>
         <%- tagcloud({
-          min_font: 16, 
-          max_font: 35, 
-          amount: 999, 
-          color: true, 
-          start_color: '#adb5bd', 
+          min_font: 16,
+          max_font: 35,
+          amount: 999,
+          color: true,
+          start_color: '#adb5bd',
           end_color: '#212529',
         }) %>
         <% } %>
+    </div>
+  </div>
+<% } else if (page.path === 'categories/index.html') { %>
+  <div class="categories">
+    <div class="category-all-page">
+      <div class="category-all-title">
+          <%- __('counter', site.categories.length) %><%- __('menu.categories') %>
+          <!-- {{ _p('counter.categories', site.categories.length) }} -->
+      </div>
+      <div class="category-all">
+        <%- list_categories() %>
+      </div>
     </div>
   </div>
 <% } else { %>

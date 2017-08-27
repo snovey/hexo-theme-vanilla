@@ -6,20 +6,32 @@
         <span></span>
       </a>
       <div class="site-meta">
-        <img src="<%= theme.avatar %>" class="site-avatar">
+        <% if (theme.headbar.avatar) { %>
+          <img src="<%= theme.avatar %>" class="site-avatar">
+        <% } %>
         <div class="site-info">
           <div class="site-info-wrap">
-            <a class="site-title" href="/"><%= config.title %></a>
-            <span class="site-description"><%= config.description %></span>
+            <% if (theme.headbar.title) { %>
+              <a class="site-title" href="/"><%= config.title %></a>
+            <% } %>
+            <% if (theme.headbar.description) { %>
+              <span class="site-description"><%= config.description %></span>
+            <% } %>
           </div>
         </div>
       </div>
       <nav class="menu">
         <div class="menu-wrap">
           <div class="menu-info">
-            <img class="site-avatar" src="<%= theme.avatar %>">
-            <a class="site-title" href="/"><%= config.title %></a>
-            <span class="site-description"><%= config.description %></span>
+            <% if (theme.sidebar.avatar) { %>
+              <img class="site-avatar" src="<%= theme.avatar %>">
+            <% } %>
+            <% if (theme.sidebar.avatar) { %>
+              <a class="site-title" href="/"><%= config.title %></a>
+            <% } %>
+            <% if (theme.sidebar.avatar) { %>
+              <span class="site-description"><%= config.description %></span>
+            <% } %>
           </div>
           <ul class="menu-items">
             <% for (name in theme.menu) { %>

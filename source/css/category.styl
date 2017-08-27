@@ -1,0 +1,31 @@
+.category-item {
+  padding: 0.5em
+  border-bottom: 1px dotted COLOR-7
+  transition: transform .2s, color .2s, -webkit-transform .2s
+  &:hover {
+    transform: translateX(2px)
+  }
+  .category-title {
+    overflow: hidden
+    width: 65%
+    border: none
+    text-overflow: ellipsis
+    white-space: nowrap
+    &:hover {
+      border: none
+    }
+  }
+  .date {
+    float: right
+    font-family:  Georgia, Constantia, Candara, Corbel, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+}
+.categories ul {
+  margin: 0
+}
+
+@media screen and (max-width: 768px) {
+  .categories h1 {
+    text-align: center
+  }
+}

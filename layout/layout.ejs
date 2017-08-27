@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-Hans">
 <head>
   <%- partial('_partial/head') %>
 </head>
@@ -10,30 +10,32 @@
   </main>
   <%- partial('_partial/footer') %>
   <script>
-    function toggleClassMenu() {
-      myMenu.classList.add("menu--animatable")
-      if(!myMenu.classList.contains("menu--visible")) {
-        myMenu.classList.add("menu--visible")
-      } else {
-        myMenu.classList.remove('menu--visible')
+    window.onload = function () {
+      function toggleClassMenu() {
+        myMenu.classList.add("menu--animatable")
+        if(!myMenu.classList.contains("menu--visible")) {
+          myMenu.classList.add("menu--visible")
+        } else {
+          myMenu.classList.remove('menu--visible')
+        }
+        if(!oppMenu.classList.contains("toggle-animate")) {
+          oppMenu.classList.add("toggle-animate")
+        } else {
+          oppMenu.classList.remove("toggle-animate")
+        }
       }
-      if(!oppMenu.classList.contains("toggle-animate")) {
-        oppMenu.classList.add("toggle-animate")
-      } else {
-        oppMenu.classList.remove("toggle-animate")
+  
+      function OnTransitionEnd() {
+        myMenu.classList.remove("menu--animatable")
+        // oppMenu.classList.remove("toggle-animate")
       }
+  
+      var myMenu = document.querySelector(".menu")
+      var oppMenu = document.querySelector("#nav-trigger")
+      myMenu.addEventListener("transitionend", OnTransitionEnd, false)
+      oppMenu.addEventListener("click", toggleClassMenu, false)
+      myMenu.addEventListener("click", toggleClassMenu, false)
     }
-
-    function OnTransitionEnd() {
-      myMenu.classList.remove("menu--animatable")
-      // oppMenu.classList.remove("toggle-animate")
-    }
-
-    var myMenu = document.querySelector(".menu")
-    var oppMenu = document.querySelector("#nav-trigger")
-    myMenu.addEventListener("transitionend", OnTransitionEnd, false)
-    oppMenu.addEventListener("click", toggleClassMenu, false)
-    myMenu.addEventListener("click", toggleClassMenu, false)
   </script>
 </body>
 </html>

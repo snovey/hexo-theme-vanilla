@@ -1,0 +1,14 @@
+menu:
+  home: 首页
+  archives: 归档
+  categories: 分类
+  tags: 标签
+  about: 关于
+
+toc: 文章目录
+counter: 共计 %d 个
+continue: 继续阅读
+
+archive:
+  name: 日志
+  counter: 共计 %d 篇

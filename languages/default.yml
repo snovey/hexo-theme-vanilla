@@ -4,6 +4,11 @@ Menu:
   categories: Categories
   tags: Tags
   about: About
-Paginator:
-  Prev: Prev
-  Next: Next
+
+toc: Toc
+counter: There are %d
+continue: continue
+
+archive:
+  name: articles
+  counter: There are %d

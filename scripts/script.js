@@ -1,4 +1,4 @@
-hexo.extend.generator.register('single-page', function(locals) {
+/*hexo.extend.generator.register('single-page', function(locals) {
   var config = this.config;
   var singlePageConfig = config.single_page;
   var results = [];
@@ -10,7 +10,7 @@ hexo.extend.generator.register('single-page', function(locals) {
     });
   });
   return results;
-});
+});*/
 
 hexo.extend.filter.register('after_post_render', function(data){
   // console.log('---' + data.title + '---');

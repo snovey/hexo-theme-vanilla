@@ -13,9 +13,6 @@ keywords: "Hexo, plain"
 # Set rss to specific value if you have burned your feed already.
 rss:
 
-# Specify the date when the site was setup
-#since: 2015
-
 # Canonical, set a canonical link tag in your hexo, you could use it for your SEO of blog.
 # See: https://support.google.com/webmasters/answer/139066
 # Tips: Before you open this tag, remeber set up your URL in hexo _config.yml ( ex. url: http://yourdomain.com )
@@ -30,20 +27,27 @@ canonical: true
 menu:
   home: /
   archives: /archives
+  categories: /categories
   tags: /tags
   about: /about
+
+# ---------------------------------------------------------------
+# Headbar Settings
+# ---------------------------------------------------------------
+
+headbar:
+  avatar: false
+  title: true
+  description: false
 
 # ---------------------------------------------------------------
 # Sidebar Settings
 # ---------------------------------------------------------------
 
-
-# Social Links
-# Key is the link label showing to end users.
-# Value is the target link (E.g. GitHub: https://github.com/iissnan)
-#social:
-  #LinkLabel: Link
-
+sidebar:
+  avatar: true
+  title: true
+  description: true
 
 # Social Links Icons
 # Icon Mapping:
@@ -51,14 +55,13 @@ menu:
 #   Key is the name of the item and value is the name of FontAwsome icon. Key is case-senstive.
 #   When an globe mask icon presenting up means that the item has no mapping icon.
 social_icons:
-  enable: true
-  # Icon Mappings.
-  # KeyMapsToSocalItemKey: NameOfTheIconFromFontAwesome
-  GitHub: github
-  Twitter: twitter
-  Weibo: weibo
+  # Icons.
+  GitHub: //github.com/snovey
+  Twitter:
+  Weibo:
+  Mail:
 
-# Sidebar Avatar
+# Topbar and Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
 avatar: //blog.snovey.com/uploads/avatar.jpg
@@ -68,44 +71,11 @@ avatar: //blog.snovey.com/uploads/avatar.jpg
 toc:
   enable: false
 
-  # Automatically add list number to toc.
-  number: false
-
-
 # Creative Commons 4.0 International License.
 # http://creativecommons.org/
 # Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
 #creative_commons: by-nc-sa
 creative_commons: by-nc-nd
-
-sidebar:
-  # Sidebar Position, available value: left | right
-  position: left
-  #position: right
-
-  # Sidebar Display, available value:
-  #  - post    expand on posts automatically. Default.
-  #  - always  expand for all pages automatically
-  #  - hide    expand only when click on the sidebar toggle icon.
-  #  - remove  Totally remove sidebar including sidebar toggler.
-  display: post
-  #display: always
-  #display: hide
-  #display: remove
-
-# ---------------------------------------------------------------
-# Misc Theme Settings
-# ---------------------------------------------------------------
-
-# Code Highlight theme
-# Available value:
-#    normal | night | night eighties | night blue | night bright
-# https://github.com/chriskempson/tomorrow-theme
-highlight_theme: normal
-
-
-# Automatically scroll page to section which is under <!-- more --> mark.
-scroll_to_more: true
 
 # ---------------------------------------------------------------
 # Third Party Services Settings
@@ -113,65 +83,14 @@ scroll_to_more: true
 
 # MathJax Support
 mathjax:
-  enable: true
   cdn: //cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML
 
-#! ---------------------------------------------------------------
-#! DO NOT EDIT THE FOLLOWING SETTINGS
-#! UNLESS YOU KNOW WHAT YOU ARE DOING
-#! ---------------------------------------------------------------
-
-# Motion
-use_motion: true
-
-# Fancybox
-fancybox: true
-
-# Script Vendors.
-# Set a CDN address for the vendor you want to customize.
-# For example
-#    jquery: https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js
-# Be aware that you should use the same version as internal ones to avoid potential problems.
-vendors:
-  # Internal path prefix. Please do not edit it.
-  _internal: //blog.snovey.com/vendors
-
-  # Internal version: 2.1.3
-  jquery:
-
-  # Internal version: 2.1.5
-  # http://fancyapps.com/fancybox/
-  fancybox:
-  fancybox_css:
-
-  # Internal version: 1.0.6
-  # https://github.com/ftlabs/fastclick
-  fastclick:
-
-  # Internal version: 1.9.7
-  # https://github.com/tuupola/jquery_lazyload
-  lazyload:
-
-  # Internal version: 1.2.1
-  # http://VelocityJS.org
-  velocity:
-
-  # Internal version: 1.2.1
-  # http://VelocityJS.org
-  velocity_ui:
-
-  # Internal version: 0.7.9
-  # https://faisalman.github.io/ua-parser-js/
-  ua_parser:
-
-  # Internal version: 4.4.0
-  # http://fontawesome.io/
-  fontawesome:
+# https://github.com/aFarkas/lazysizes/tree/4.0.0-rc3
+lazyload:
+  enable: true
 
 # Assets
 css: //blog.snovey.com/css
-js: //blog.snovey.com/js
-images: //blog.snovey.com/images
 
 # Theme version
-version: 1.0.0
+version: 0.1.0
