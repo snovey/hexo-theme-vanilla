@@ -5,16 +5,14 @@ body {
   color: #5c5c5c;
   background-color: #f8f8f5;
   -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizelegibility;
 }
 
 /* 如果你的项目仅支持 IE9+ | Chrome | Firefox 等，推荐在 <body> 中添加 .borderbox 这个 class */
 body.borderbox *, body.borderbox *:before, body.borderbox *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 

@@ -1,6 +1,9 @@
 article-padding = 20px
 line-height = 1.6em
 font-size = 14px
+color-link = #258fb8
+color-border = #ddd
+color-background = #eee
 // https://github.com/chriskempson/tomorrow-theme
 highlight-background = #2d2d2d
 highlight-current-line = #393939
@@ -28,7 +31,7 @@ $code-block
 
 $line-numbers
   color: #666
-  font-size: 0.85em
+  font-size: .85em
 
 .article-entry
   pre, code
@@ -36,7 +39,7 @@ $line-numbers
   code
     background: color-background
     text-shadow: 0 1px #fff
-    padding: 0 0.3em
+    padding: 0 3em
   pre
     @extend $code-block
     code
@@ -57,7 +60,7 @@ $line-numbers
       padding: 0
     figcaption
       clearfix()
-      font-size: 0.85em
+      font-size: .85em
       color: highlight-comment
       line-height: 1em
       margin-bottom: 1em
@@ -99,7 +102,7 @@ $line-numbers
       .gist-meta
         background: highlight-background
         color: highlight-comment
-        font: 0.85em font-sans
+        font: .85em font-sans
         text-shadow: 0 0
         padding: 0
         margin-top: 1em

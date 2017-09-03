@@ -19,10 +19,12 @@ hexo.extend.filter.register('after_post_render', function(data){
   // }
   try {
     // data.content.match(/<img([^>]*)\ssrc=/gi).forEach(x => console.log('+++' + x))
-    data.content = data.content.replace(/<img([^>]*)\ssrc=/gi, '<img$1 class="lazyload"  data-src=');
+    if (hexo.theme.config.lazyload) {
+      data.content = data.content.replace(/<img([^>]*)\ssrc=/gi, '<img$1 class="lazyload"  data-src=')
+    }
     // data.content.match(/<img([^>]*)\sdata-src=/gi).forEach(x => console.log('+++' + x))
-    return data;
+    return data
   } catch (e) {
-    return data;
+    return data
   }
 });

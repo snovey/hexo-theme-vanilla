@@ -3,7 +3,7 @@
     <h1 class="title"><%= page.title %></h1>
   </div>
    <div class="post-meta">
-    <span class="post-time"><%- date(page.date, "YYYY-MM-DD") %></span>
+    <span class="date"><%- date(page.date, "YYYY-MM-DD") %></span>
     <% if (theme.menu.tags && page.tags && page.tags.length) { %>
       <span>|<span>
       <%- list_tags(page.tags, {
@@ -23,7 +23,7 @@
       }) %>
     <% } %>
   </div>
-  <% if (theme.toc.enable || page.toc) { %>
+  <% if (page.toc ? page.toc : theme.toc) { %>
     <div class="toc-article">
         <strong class="toc-title"><%- __('toc') %></strong>
         <%- toc(page.content) %>
@@ -33,25 +33,58 @@
     <%- page.content %>
   </div>
 </article>
-<% if (page.mathjax) { %>
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
-  </script>
+<% if (page.top ? page.top : theme.top) { %>
+<a class="top" id="top" href="javascript:;"></a>
+<% } %>
+<% if (page.top ? page.top : theme.top) { %>
+<script>
+  window.onscroll = function () {
+    if (document.body.scrollTop > window.innerHeight) {
+      document.getElementById('top').classList.add('toggle')
+    } else {
+      document.getElementById('top').classList.remove('toggle')
+    }
+  }
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-      var all = MathJax.Hub.getAllJax(), i;
-      for (i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-      Array.from(document.getElementsByClassName('has-jax')).forEach(x => x.parentNode.style.overflow = 'auto')
-    });
-  </script>
-  <script src="<%= theme.mathjax.cdn %>"></script>
+  function scrollTo (element, to, duration) {
+    if (duration <= 0) return
+    var difference = to - element.scrollTop
+    var perTick = -25 + difference / duration * 10
+    // console.log(to, element.scrollTop, difference, duration, perTick)
+
+    setTimeout(function () {
+      element.scrollTop = element.scrollTop + perTick
+      if (element.scrollTop <= to) return
+      scrollTo(element, to, duration)
+    }, 10)
+  }
+
+  document.getElementById('top').addEventListener("click", function () {
+    scrollTo(document.body, 0, Math.ceil(document.body.scrollTop / 10))
+  }, false)
+</script>
+<% } %>
+<% if (page.mathjax ? page.mathjax : theme.mathjax.enable) { %>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  })
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i
+    for (i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.classList.add('has-jax')
+    }
+    Array.from(document.getElementsByClassName('has-jax')).forEach(function (x) {
+      return x.parentNode.style.overflow = 'auto'
+    })
+  })
+</script>
+<script src="<%= theme.mathjax.cdn %>"></script>
 <% } %>

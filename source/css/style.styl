@@ -1,16 +1,19 @@
 @import "_util/typo.css"
 @import "_util/base"
 @import "_util/highlight"
+
 .highlight {
-  font-size: 0.8em
+  font-size: .8em
   overflow: auto
   table {
     width: 100%
+    margin-bottom: 0
     td {
       padding: 0
       border: 0
       pre {
         border: none
+        margin-bottom: 0
       }
     }
   }
@@ -35,7 +38,9 @@
     text-align: center
 }
 
-figure::-webkit-scrollbar {display:none}
+.date {
+  font-family:  Georgia, Constantia, Candara, Corbel, "Helvetica Neue", Helvetica, Arial, sans-serif
+}
 
 @import "_partial/footer"
 @import "_partial/header"

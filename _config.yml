@@ -26,10 +26,10 @@ canonical: true
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
 menu:
   home: /
-  archives: /archives
-  categories: /categories
-  tags: /tags
-  about: /about
+  archives: /archives/
+  categories: /categories/
+  tags: /tags/
+  about: /about/
 
 # ---------------------------------------------------------------
 # Headbar Settings
@@ -64,12 +64,14 @@ social_icons:
 # Topbar and Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
-avatar: //blog.snovey.com/uploads/avatar.jpg
+avatar: //blog.snovey.com/uploads/avatar.png
 
 
 # Table Of Contents in the Sidebar
-toc:
-  enable: false
+toc: false
+
+# Scroll to top
+top: true
 
 # Creative Commons 4.0 International License.
 # http://creativecommons.org/
@@ -81,13 +83,21 @@ creative_commons: by-nc-nd
 # Third Party Services Settings
 # ---------------------------------------------------------------
 
+# Disqus support
+disqus:
+  enable: true
+  shortname: //snovey.disqus.com
+  count: true
+  lazyload: true
+
 # MathJax Support
+# Support close in gloabal and open in single post for save resources
 mathjax:
+  enable: false
   cdn: //cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML
 
 # https://github.com/aFarkas/lazysizes/tree/4.0.0-rc3
-lazyload:
-  enable: true
+lazyload: true
 
 # Assets
 css: //blog.snovey.com/css

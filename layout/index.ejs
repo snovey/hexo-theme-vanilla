@@ -5,7 +5,7 @@
         <h2><a class="post-title-link" href="<%- url_for(post.path) %>"><%= post.title %></a></h2>
       </div>
       <div class="post-meta">
-        <span class="post-time"><%- date(post.date, "YYYY-MM-DD") %></span>
+        <span class="date"><%- date(post.date, "YYYY-MM-DD") %></span>
         <% if (theme.menu.tags && post.tags && post.tags.length) { %>
           <span>|<span>
           <%- list_tags(post.tags, {

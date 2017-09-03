@@ -13,9 +13,10 @@ body, button, input, select, textarea, optgroup {
   }
 }
 
-section {
+main .section {
   min-height: calc(100vh - 162px - 6rem - 4px) /* 162px 是上下栏， 6rem 是 line-height+margin*2， 4px 是 border*2 */
 }
+
 main {
   display: block
   margin: 0 auto
@@ -23,6 +24,7 @@ main {
   width: 95%
   min-height: calc(100vh - 162px)
 }
+
 blockquote {
   margin: 0
   margin-bottom: 1.2em
@@ -31,17 +33,20 @@ blockquote {
   color: COLOR-7
   background-color: COLOR-3
 }
+
 img {
   display: block
   margin: 0 auto
   max-height: 500px
   max-width: 70%
 }
+
 code {
   padding: .1em .5em
   border-radius: 3px
   background-color: COLOR-3
 }
+
 kbd {
   display: inline-block
   margin: 0 .1em
@@ -52,6 +57,6 @@ kbd {
   line-height: 1.4
   text-shadow: 0 1px 0 #fff
   background-color: COLOR-3
-  box-shadow: 0 1px 0 rgba(0,0,0,0.2),0 0 0 2px COLOR-0 inset
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .2), 0 0 0 2px COLOR-0 inset
   color: #333
 }

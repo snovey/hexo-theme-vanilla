@@ -12,7 +12,7 @@
         </span> -->
       </a>
       <% } %>
-      <div class="page-number"><%= page.current %> / <%= Math.ceil(site.posts.length / config.per_page) %></div>
+      <div class="page-number date"><%= page.current %> / <%= Math.ceil(site.posts.length / config.per_page) %></div>
       <% if (page.next) { %>
         <a class="page-next" href="<%- url_for(page.next_link) %>">
          &gt;

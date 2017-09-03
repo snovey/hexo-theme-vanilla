@@ -5,12 +5,12 @@
     <% page.posts.each(function(post) { %>
       <% var year = post.date.year() %>
       <% if(lastyear !== year) { %>
-        <h2 class="archive-year"><%= year %></h2>
+        <h2 class="archive-year date"><%= year %></h2>
         <% lastyear = year %>
       <% } %>
       <div class="archive-item">
         <a class="archive-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
-        <span class="archive-time"><%= post.date.format('MM-DD') %></span>
+        <span class="archive-time date"><%= post.date.format('MM-DD') %></span>
       </div>
       <% }) %>
   </div>

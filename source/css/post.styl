@@ -10,12 +10,9 @@
   .post-meta {
     text-align: center
   }
-  .post-time {
-    font-family:  Georgia, Constantia, Candara, Corbel, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
-  h2:before,
-  h3:before {
-    content: "¶"
+  h2:hover:after,
+  h3:hover:after {
+    content: " ¶"
     margin-right: .5em
     color: COLOR-7
   }
@@ -45,6 +42,44 @@
     margin: 0
   }
 }
+  a.top {
+    // @keyframes slide {
+    //   from { margin-top: 28px }
+    //   to { margin-top: 14px }
+    // }
+    position: fixed
+    right: 2rem
+    bottom: 0
+    display: block
+    width: 40px
+    height: 40px
+    border-bottom: none
+    border-radius: 3px
+    text-align: center
+    background-color: COLOR-7
+    opacity: 0
+    transition: bottom .3s ease-in-out, opacity .3s ease-in-out
+    &:hover {
+      border-bottom: none
+    }
+    &:after {
+      content: ''
+      display: inline-block
+      margin-top: 14px
+      width: 14px
+      height: 14px
+      border-top: 4px solid COLOR-3
+      border-right: 4px solid COLOR-3
+      transform: rotate(-45deg)
+    }
+    // &:hover:after {
+    //   animation: 1s slide ease-in-out
+    // }
+  }
+  a.toggle {
+    bottom: 99px
+    opacity: 1
+  }
 
 @media screen and (max-width: 768px) {
   .post-detail {

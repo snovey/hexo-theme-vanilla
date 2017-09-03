@@ -27,33 +27,28 @@
     margin-bottom: 5px
     width: 25px
     height: 3px
-    border-radius: 3px
+    border-radius: 1px
     background: COLOR-0
-    -webkit-transform-origin: 24px
-            transform-origin: 24px
-    -webkit-transition: background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0)
-            transition: background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0)
-            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease
-            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0)
+    transform-origin: 24px
+    transition: background .5s cubic-bezier(.77, .2, .05, 1.0), opacity .55s ease
+    transition: transform .5s cubic-bezier(.77, .2, .05, 1.0), background .5s cubic-bezier(.77, .2, .05, 1.0), opacity .55s ease
+    transition: transform .5s cubic-bezier(.77, .2, .05, 1.0), background .5s cubic-bezier(.77, .2, .05, 1.0), opacity .55s ease
   }
 }
 .toggle-animate {
   span {
     opacity: 1
-    -webkit-transform: rotate(45deg)
-            transform: rotate(45deg)
     &:nth-last-child(1) {
       opacity: 1
-      -webkit-transform: rotate(45deg)
-              transform: rotate(45deg)
+      transform: rotate(45deg)
     }
     &:nth-last-child(2) {
       opacity: 0
+      transform: rotate(0deg)
     }
     &:nth-last-child(3) {
       opacity: 1
-      -webkit-transform: rotate(-45deg)
-              transform: rotate(-45deg)
+      transform: rotate(-45deg)
     }
   }
 }
@@ -135,15 +130,19 @@ a.site-title {
     &:hover {
       border: none
       color: COLOR-0
-      &::after {
-        content: ''
-        position: absolute;
-        bottom: 0;
-        left: 0px;
-        width: 5.2rem;
-        height: 5px;
-        background-color: COLOR-3;
-      }
+    }
+    &:after {
+      content: ''
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 5.2rem
+      background: transparent
+      transition: height .25s cubic-bezier(.0, .0, .2, 1), background-color .25s cubic-bezier(.0, .0, .2, 1)
+    }
+    &:hover:after {
+      height: 5px
+      background-color: COLOR-3
     }
   }
 }
@@ -220,12 +219,11 @@ a.site-title {
     position: relative
     z-index: 3
     min-width: 260px
-    width: 40%
+    width: 38.2%
     height: 100%
     color: COLOR-0
     background-color: COLOR-9
-    -webkit-transform: translateX(-103%)
-            transform: translateX(-103%)
+    transform: translateX(-103%)
     will-change: transform
     pointer-events: auto
     .menu-item {
@@ -241,14 +239,13 @@ a.site-title {
       }
     }
     .menu-item-text {
-      letter-spacing: 0.5em
-      margin-left: 0.5em
+      letter-spacing: .5em
+      margin-left: .5em
     }
   }
 
   .menu--visible .menu-wrap {
-    -webkit-transform: none
-            transform: none
+    transform: none
   }
 
   .menu--animatable .menu-wrap {
@@ -267,10 +264,10 @@ a.site-title {
     display: block
     width: 100%
     height: 100%
-    background: rgba(0,0,0,0.4)
+    background: rgba(0, 0, 0, .4)
     opacity: 0
     pointer-events: none
-    transition: opacity 0.3s cubic-bezier(0,0,0.3,1)
+    transition: opacity .3s cubic-bezier(0, 0, .3, 1)
     will-change: opacity
   }
 

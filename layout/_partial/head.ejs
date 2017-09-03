@@ -2,15 +2,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="format-detection" content="telephone=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 <link href="<%= url_for(theme.css) %>/style.css?v=<%= theme.version %>" rel="stylesheet" type="text/css">
 
 <% if (page.keywords) { %>
-  <meta name="keywords" content="<%= page.keywords %>" />
+  <meta name="keywords" content="<%= page.keywords %>">
 <% } else if (theme.keywords) { %>
-  <meta name="keywords" content="<%= theme.keywords %>" />
+  <meta name="keywords" content="<%= theme.keywords %>">
 <% } %>
 
 
@@ -18,11 +18,11 @@
   <% theme.rss = config.feed.path %>
 <% } %>
 <% if (theme.rss) { %>
-  <link rel="alternate" href="<%= url_for(theme.rss) %>" title="<%= config.title %>" type="application/atom+xml" />
+  <link rel="alternate" href="<%= url_for(theme.rss) %>" title="<%= config.title %>" type="application/atom+xml">
 <% } %>
 
 <% if (theme.favicon) { %>
-  <link rel="shortcut icon" type="image/x-icon" href="<%= url_for(theme.favicon) %>?v=<%= theme.version %>" />
+  <link rel="shortcut icon" type="image/x-icon" href="<%= url_for(theme.favicon) %>">
 <% } %>
 <% /*Canonical, good for google search engine (SEO) : https://support.google.com/webmasters/answer/139066*/ %>
 <% if (theme.canonical) { %>

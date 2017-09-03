@@ -15,8 +15,7 @@
         margin-top: 2px
         height: 2px
         background: transparent
-        transition: height .5s ease, background-color .5s ease
-        transition-timing-function: ease-in-out
+        transition: height .25s cubic-bezier(0, 0, .2, 1), background-color .25s cubic-bezier(0, 0, .2, 1)
       }
       &:hover:after {
         height: 2px
@@ -49,10 +48,7 @@
     text-decoration: none
     background: COLOR-0
     color: COLOR-7
-    transition-property: COLOR-0
-    transition-duration: 0.2s
-    transition-timing-function: ease-in-out
-    transition-delay: 0s
+    transition: .25s ease-in-out
   }
   a.btn:hover {
     border-color: COLOR-9
@@ -87,10 +83,6 @@
         display: none
       }
     }
-  }
-
-  .post-time {
-    font-family:  Georgia, Constantia, Candara, Corbel, "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 }
 
