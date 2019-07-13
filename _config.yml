@@ -102,5 +102,11 @@ lazyload: true
 # Assets
 css: //blog.snovey.com/css
 
+# 版权起始年份
+since_year: 2016
+
+# icp备案号  ICP_license: 京ICP备1234556号-1
+ICP_license: false
+
 # Theme version
 version: 0.1.0

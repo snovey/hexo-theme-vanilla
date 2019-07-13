@@ -57,10 +57,17 @@
         </a>
       <% } %>
       <p class="copyright">
-        <%= config.title %> &copy; 2016-2017
+        <!-- <%= config.title %> &copy; 2016-2017 -->
+        <span>
+          <%-config.author %> &copy; <%if (theme.since_year && theme.since_year < date(new Date(), 'YYYY')) {%><%- theme.since_year %> - <%}%><%- date(new Date(), 'YYYY') %></span>
+        <span>
+          <% if(theme.ICP_license) {%>
+          <a href="http://beian.miit.gov.cn/" target="_blank"><%- theme.ICP_license %></a><br>
+          <% } %>
+        </span>
       </p>
       <p class="info">
-        Powered by <a href="//hexo.io">hexo</a> &#124; Theme with plain &#124; Hosted on <a href="//github.com">GitHub</a>, <a href="//coding.net">Coding</a>
+          Power by <a href="http://hexo.io/" target="_blank">Hexo</a> &#124; Theme with <a href="https://github.com/snovey/hexo-theme-vanilla" target="_blank">vanilla</a> &#124; Hosted on <a href="//github.com">GitHub</a>, <a href="//coding.net">Coding</a>
       </p>
     </div>
   </div>
