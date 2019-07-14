@@ -68,7 +68,9 @@ avatar: //blog.snovey.com/uploads/avatar.png
 
 
 # Table Of Contents in the Sidebar
-toc: false
+#toc: false
+toc:
+  list_number: false  # Whether to display numerical ordering
 
 # Scroll to top
 top: true
@@ -102,5 +104,11 @@ lazyload: true
 # Assets
 css: //blog.snovey.com/css
 
+# Copyright year
+since_year: 2016
+
+# ICP
+ICP_license: false
+
 # Theme version
-version: 0.1.0
+version: 0.1.1

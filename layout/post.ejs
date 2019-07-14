@@ -26,7 +26,10 @@
   <% if (page.toc ? page.toc : theme.toc) { %>
     <div class="toc-article">
         <strong class="toc-title"><%- __('toc') %></strong>
-        <%- toc(page.content) %>
+        <%- toc(page.content, {
+          class: 'post-toc',
+          list_number: theme.toc.list_number
+        }) %>
     </div>
   <% } %>
   <div class="post-content">
